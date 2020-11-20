@@ -1,0 +1,127 @@
+/* Your comment goes here */
+.background{
+    background-size: cover;
+    background-image:url("/img/Dinner.jpg");
+    opacity: 1;
+
+}
+.title{
+    position: relative;
+    padding: 0px 0px 0px 50px;
+    width: 51%;
+    font-size: 120%;
+    opacity: 1;
+}
+body {
+    font-family: Comic,sans-serif;
+    color: black;
+    
+    /*background-color: white;*/
+}
+.Ingredients { 
+    color: white;
+}
+
+#gluten {
+ font-weight: bold;
+}
+.Burgers{
+    margin: 2px 2px 2px 2px;
+    padding: 1px 1px 1px 10px;
+    background-color: black;
+    color: white;
+    width: 55%;
+    border: 1px dashed white;
+    
+ 
+}
+.grid{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    
+    /*
+    grid-gap: 1px;
+    grid-template-columns: 300px 300px 300px;
+    grid-template-columns: auto auto auto;*/
+
+}
+.burgerpicture{
+
+    height: 180px;
+}
+.box{
+    display: grid;
+    background-color: black;
+    grid-template-rows: auto auto auto;
+    grid-gap: 1px;
+    padding: 5px;
+    color: white;
+    
+
+    
+
+}
+
+table{
+
+    width: 30%;
+    align-self: center;   
+}
+.information{
+    background-color: white;
+    border: 2px dashed black;
+    padding: 1px 1px 1px 10px;
+    margin: 2px 2px 2px 2px;
+    width: 55%;
+
+
+}
+button:hover {
+    background: green;
+}
+.button{
+    padding: 10px 1px 1px 1px;
+
+}
+.foot{
+    background-color: white;
+}
+
+.view-box {
+	width: 90%;
+	height: 50vh;
+	margin: 1em auto;
+	overflow: scroll;
+	border: 1px solid rgba(0,0,0,0.4);
+	box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+}
+#dots {
+	position: relative;
+	margin: 0;
+	padding: 0;
+	background: url(/img/polacks.jpg);
+	background-repeat: no-repeat;
+	width:1920px;
+	height: 1078px;
+	cursor: crosshair;
+}
+
+#dots div {
+	position: absolute;
+	background: black;
+	color: white;
+	border-radius: 10px;
+	width:20px;
+	height:20px;
+	text-align: center;
+}
+
+#orderList {
+	top:1em;
+	left:1em;
+	position: absolute;
+	z-index: 2;
+	color:black;
+	background: rgba(255,255,255, 0.5);
+	padding: 1em;
+}

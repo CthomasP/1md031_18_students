@@ -41,3 +41,10 @@ body {
 	background: rgba(255,255,255, 0.5);
 	padding: 1em;
 }
+
+#dispDisc{
+ font-style: italic;
+ color: black;
+ font-size: 0.95em;
+
+}

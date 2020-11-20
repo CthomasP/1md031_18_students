@@ -1,9 +1,178 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>DELI-VERY</title>
+        <title>Burgers</title>
+        <meta charset="utf-8"/>
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="js/js_script.js" defer></script>
+        <script type="text/javascript" src="js/menu.js"></script>
+        <script src="https://vuejs.org/js/vue.js"></script>
+        <link rel="stylesheet" href="css/deli-very.css">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <script src="/js/vue_script.js" defer></script>
+
+
+        
+        
     </head>
-    <body>
-        <h1>Hello World!!!</h1>
+    <body class="background">
+        <main>
+            <div class="title">
+            <h1>Welcome to SuperBurgers</h1>
+            </div>
+            <div class="Burgers">
+                <p style=font-size:22px>Choose your burger!</p>
+                <p>This is where you execute burger selection</p>
+
+                <div class="grid" id=myID>
+                        <!---
+                    <div class="box a">
+                        Super Burger
+                        <img src="img/Burger1.jpg" width=300>
+                        <li>Cheesily cheesy</li>
+                        <li>950 kcal</li>
+                        <li>Contains <span id="gluten">gluten </span></li>
+                    </div>
+                    <div class="box b">
+                        Cheesy Cheese
+                        <img src="img/Burger2.jpg" width=300>
+                        <li>Cheesily cheesy</li>
+                        <li>950 kcal</li>
+                        <li>Contains <span id="gluten">gluten </span></li>
+                    </div>
+                    <div class="box c">
+                        Dubbel Patty
+                        <img src="img/Burger3.jpg" width=300>
+                        <li>Burgerific</li>
+                        <li>900 kcal</li>
+                        <li>Contains <span id="gluten">gluten </span></li>
+                    </div>
+                    -->
+                </div>
+            </div>
+            <br>
+ 
+           <!-- <div class="Burgers">
+               
+            <table>
+                <p style=font-size:22px>Choose your burger!</p>
+                <p>This is where you execute burger selection</p>
+                <thead>
+                    <tr>
+                        <th>Super Burger</th>
+                        <th>Cheesy Cheese</th>
+                        <th>Dubbel Patty</th>
+                    </tr>
+                </thead>
+                <div class="Ingredients">
+                    <tbody >
+                        <tr>
+                            
+                            <td><img src="img/Burger1.jpg" width=300></td>
+                            <td><img src="img/Burger2.jpg" width=300></td>
+                            <td><img src="img/Burger3.jpg" width=300></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <ul >
+                                   
+                                    <li>A super burger</li>
+                                    <li>750 kcal</li>
+                                    <li >Contains <span id="gluten">gluten </span></li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>Cheesily cheesy</li>
+                                    <li>950 kcal</li>
+                                    <li>Contains <span id="gluten">gluten </span></li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>Burgerific</li>
+                                    <li>900 kcal</li>
+                                    <li>Contains <span id="gluten">gluten </span></li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </tbody> 
+
+                </div>
+                   
+            </table>
+            </div> -->
+            <!--- <td><img src="https://www.burgerdudes.se/wp-content/uploads/2018/02/stewz_maui_med-620x380.jpg"></td>
+                            -->
+         
+            <div class="information" id="infoDiv">
+            <section id="contact">
+                <h2>Customer Information</h2>
+                <p>This is where you provide necessary information</p>
+                <form>
+                    <h3>Delivery Information</h3>
+                    <p>
+                        <label for="Full name">Full name</label><br>
+                        <input type="text" id="Full name" name="fn" required="required" placeholder="First- and Last name">
+                    </p>
+                    <p>
+                        <label for="E-mail">E-mail</label><br>
+                        <input type="text" id="email" name="em" required="required" placeholder="E-mail address">
+                    </p>
+                    <!--<p>
+                        <label for="Street">Street</label><br>
+                        <input type="text" id="street" name="str" required="required" placeholder="Street name">
+                    </p>
+                    <p>
+                        <label for="House number">House</label><br>
+                        <input type="number" id="House number" name="numbers" required="required" placeholder="House number">
+                    </p>
+                    <p>-->
+                        <div class="view-box">
+                            <div id="dots" v-on:click="displayOrder">
+                                <div 
+                                  v-for="order in NOList"
+                                  v-bind:style="{ left: order.details.x + 'px', top: order.details.y + 'px'}">
+                                  T
+                                </div>
+                            </div>
+                          </div>
+                        <label for="Payment options">Payment options</label><br>
+                        <select id="payment" name="PO">
+                            <option>Credit card</option>
+                            <option>Paypal</option>
+                        </select>
+                    </p>
+                    <p>Gender</p>
+                    <input type="radio" id="Male" name="gender" value="Male">
+                    <label for="Male">Male</label><br>
+                    <input type="radio" id="Female" name="gender" value="Female">
+                    <label for="Female">Female</label><br>
+                    <input type="radio" id="other" name="gender" value="Non-binary">
+                    <label for="Non-binary">Non-binary</label><br>
+                    <input type="radio" id="Undisclosed" name="gender" value="Undisclosed">
+                    <label for="Undisclosed">Undisclosed</label><br>
+                    
+                </form>
+            </section>
+
+            <div class="button" id="orderButton">
+                <button type="submit" v-on:click="tryit" ><img src="img/Truck.png" width=50>Place my order!</button>
+                </div>
+
+               <div id="info"> </div>  
+            </div>
+          <!-- <div class="button" id="orderButton">
+            <button type="submit" ><img src="img/Truck.png" width=50>Place my order!</button>
+            </div>--> 
+
+
+           
+        </main>
+        <div class="foot">
+        <footer><hr>
+           <p> Hypothetical Burgers Inc.</p>
+        </footer>
+        </div>   
     </body>
 </html>
