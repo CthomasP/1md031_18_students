@@ -220,7 +220,7 @@ function OrderOutput(orderInfo,burgers,coordinates){
     divItem.appendChild(infoGender);
     
     var infoKoor=document.createElement("li");
-    var theKoor=document.createTextNode(coordinates.x+"/"+coordinates.y);
+    var theKoor=document.createTextNode(coordinates.x+" x / "+coordinates.y+" y");
     infoKoor.appendChild(theKoor);
     divItem.appendChild(infoKoor);
 
